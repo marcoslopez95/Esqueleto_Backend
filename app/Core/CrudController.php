@@ -5,15 +5,13 @@ namespace App\Core;
 use App\Traits\ApiResponse;
 use App\Traits\ManageRoles;
 use Exception;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
-use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Validator;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 /** @property CrudService $service */
 
-class CrudController extends BaseController implements CrudInterfaz
+class CrudController extends BaseController
 {
     use ApiResponse, ManageRoles;
 
@@ -25,7 +23,7 @@ class CrudController extends BaseController implements CrudInterfaz
     }
 
 
-    public function index(Request $request)
+    public function index(FormRequest $request)
     {
         try{
 

@@ -57,7 +57,7 @@ class GeneratorCommand extends Command
         $this->getBr($name);
         $separator = '\\';
         $name_controller = "\App\Http\Controllers\\" . $package . $separator . $name . "Controller::class";
-        File::append(base_path('routes/api.php'), "Route::apiResource('" . Str::plural(strtolower($name)) . "', ".$name_controller."::class);\n");
+        File::append(base_path('routes/api.php'), "Route::apiResource('" . Str::plural(strtolower($name)) . "', $name_controller);\n");
     }
 
     protected function model($name, $package)
