@@ -23,7 +23,7 @@ class CrudController extends BaseController
     }
 
 
-    public function index(FormRequest $request)
+    public function index(Request $request)
     {
         try{
 
